@@ -2,7 +2,7 @@ import express, { NextFunction, Request, Response } from 'express'
 import multer from 'multer'
 import path from 'path'
 import cors from 'cors'
-import http from 'http'
+import https from 'https'
 import * as fs from 'fs'
 import basicAuth from 'express-basic-auth'
 import contentDisposition from 'content-disposition'
@@ -2397,7 +2397,13 @@ export async function start(): Promise<void> {
     serverApp = new App()
 
     const port = parseInt(process.env.PORT || '', 10) || 3000
-    const server = http.createServer(serverApp.app)
+
+    const options = {
+        key: fs.readFileSync('../certs/server.key'),
+        cert: fs.readFileSync('../certs/server.crt')
+    }
+
+    const server = https.createServer(options, serverApp.app)
 
     const io = new Server(server, {
         cors: getCorsOptions()
