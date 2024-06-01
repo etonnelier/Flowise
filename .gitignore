@@ -39,6 +39,9 @@
 **/*.key
 **/api.json
 
+## SSL
+**/*.crt
+
 ## uploads
 **/uploads
 
