@@ -47,3 +47,7 @@
 
 ## compressed
 **/*.tgz
+
+## nohup
+nohup.out
+nohup.out.backup

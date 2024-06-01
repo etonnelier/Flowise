@@ -38,6 +38,14 @@ Download and Install [NodeJS](https://nodejs.org/en/download) >= 18.15.0
 
 3. Open [http://localhost:3000](http://localhost:3000)
 
+## nohup
+
+Run the app as a background task :
+
+```bash
+nvm use v20.10.0 && nohup bash nohup/start_daemon.sh &
+```
+
 ## 🐳 Docker
 
 ### Docker Compose
