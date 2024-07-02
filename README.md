@@ -38,13 +38,24 @@ Download and Install [NodeJS](https://nodejs.org/en/download) >= 18.15.0
 
 3. Open [http://localhost:3000](http://localhost:3000)
 
-## nohup
+## On Raspberry Pi 4
 
-Run the app as a background task :
+### Go to flowise root folder
 
-```bash
-nvm use v20.10.0 && nohup bash nohup/start_daemon.sh &
 ```
+cd flowise
+```
+
+### Start Flowise
+
+```
+screen -dmS my_flowise_session
+screen -S my_flowise_session -X stuff 'bash services/start_daemon.sh\n'
+```
+
+### Check that flowise is running correctly
+
+then you can go to https://90.78.186.130:3006/
 
 ## 🐳 Docker
 
